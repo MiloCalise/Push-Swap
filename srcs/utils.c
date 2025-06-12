@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:34:20 by miltavar          #+#    #+#             */
-/*   Updated: 2025/05/23 15:26:29 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:46:18 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	return (s1[i] - s2[i]);
 }
+
 int	check_occ_split(char **strs)
 {
 	int	i;

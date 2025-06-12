@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 10:34:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/05/28 13:11:26 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:41:27 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,21 @@ void	swap(t_lists **lst)
 	}
 }
 
-t_lists	*push(t_lists **dest, t_lists **src)
+void	push(t_lists **dest, t_lists **src)
 {
 	t_lists	*tmp;
 
-	if (!(*src))
-		return (NULL);
+	if (!src || !(*src))
+		return ;
 	tmp = *src;
-	if (!(*dest))
-		*dest = ft_lstnew_ps((*src)->content);
-	else
-		ft_lstadd_front_ps(dest, ft_lstnew_ps((*src)->content));
-	(*src) = (*src)->next;
-	free(tmp);
-	return (*dest);
+	*src = (*src)->next;
+	tmp->next = *dest;
+	*dest = tmp;
 }
 
 void	rotate(t_lists **lst)
 {
-	int	temp;
+	int		temp;
 	t_lists	*tmp;
 
 	if (!(*lst)->next)
@@ -63,19 +59,22 @@ void	rotate(t_lists **lst)
 	}
 	tmp->content = temp;
 }
+
 void	reverse_rotate(t_lists **lst)
 {
-	int	temp;
-	t_lists	*tmp;
+	t_lists	*prev;
+	t_lists	*last;
 
-	if (!(*lst)->next)
+	if (!lst || !(*lst) || !(*lst)->next)
 		return ;
-	tmp = (*lst);
-	while (tmp->next)
+	prev = NULL;
+	last = *lst;
+	while (last->next)
 	{
-		tmp->next->content = tmp->content;
-		tmp = tmp->next;
+		prev = last;
+		last = last->next;
 	}
-	temp = tmp->content;
-	(*lst)->content = temp;
+	prev->next = NULL;
+	last->next = *lst;
+	*lst = last;
 }

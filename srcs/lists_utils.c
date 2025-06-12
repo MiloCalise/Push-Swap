@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:47:23 by miltavar          #+#    #+#             */
-/*   Updated: 2025/05/27 10:37:01 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:45:54 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_lists	*split_to_list(char **argv)
 {
-	char **strs;
+	char	**strs;
 	int		i;
 	t_lists	*lst_a;
 
@@ -31,18 +31,17 @@ t_lists	*split_to_list(char **argv)
 	}
 	return (lst_a);
 }
+
 void	ft_lstprint(t_lists *lst)
 {
-	t_lists	*tmp;
-
-	tmp = lst;
-	while (tmp)
+	while (lst)
 	{
-		ft_putnbr_fd(tmp->content, 1);
-		ft_putchar_fd('\n', 1);
-		tmp = tmp->next;
+		printf("%d ", lst->content);
+		lst = lst->next;
 	}
+	printf("\n");
 }
+
 t_lists	*ft_lstnew_ps(int content)
 {
 	t_lists	*dst;
@@ -54,6 +53,7 @@ t_lists	*ft_lstnew_ps(int content)
 	dst->next = NULL;
 	return (dst);
 }
+
 void	ft_lstadd_back_ps(t_lists **lst, t_lists *new)
 {
 	t_lists	*tmp;
@@ -70,10 +70,11 @@ void	ft_lstadd_back_ps(t_lists **lst, t_lists *new)
 		tmp->next = new;
 	}
 }
+
 t_lists	*argv_to_list(int argc, char **argv)
 {
 	t_lists	*lst_a;
-	int	i;
+	int		i;
 
 	lst_a = ft_lstnew_ps(ft_atoi(argv[1]));
 	i = 2;

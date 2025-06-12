@@ -6,7 +6,7 @@
 #    By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 14:15:45 by miltavar          #+#    #+#              #
-#    Updated: 2025/05/27 14:14:31 by miltavar         ###   ########.fr        #
+#    Updated: 2025/06/11 15:18:58 by miltavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g -Ilibft/includes -Iincludes
 SRCS		= srcs/push_swap.c srcs/args_check.c srcs/utils.c \
 				srcs/lists_utils.c srcs/lists_utils_2.c \
-				srcs/utils_2.c
+				srcs/utils_2.c srcs/specifics.c srcs/movements.c \
+				srcs/movements_2.c srcs/big_sort.c srcs/tab_utils.c
 LIBFT_PATH	= ./libft
 LIBFT		= $(LIBFT_PATH)/libft.a
 OBJS		= $(SRCS:.c=.o)

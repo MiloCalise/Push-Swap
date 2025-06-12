@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:20:45 by miltavar          #+#    #+#             */
-/*   Updated: 2025/05/27 14:36:02 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:40:08 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	check_str(char **argv)
 	}
 	return (free(strs), 1);
 }
+
 int	do_checks(char *str)
 {
 	long	check;
@@ -89,6 +90,7 @@ int	do_checks(char *str)
 		return (0);
 	return (1);
 }
+
 void	free_split(char **strs, int i)
 {
 	while (strs[i])
