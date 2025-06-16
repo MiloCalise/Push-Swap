@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:16:38 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:56:13 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:08:04 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ int	get_chunk_count(int size)
 {
 	if (size <= 100)
 		return (5);
-	else if (size <= 250)
+	else if (size <= 200)
 		return (8);
+	else if (size <= 300)
+		return (12);
 	else if (size <= 400)
-		return (10);
+		return (15);
 	else
-		return (13);
+		return (20);
 }
 
 int	*sortint(int *tab, int size)

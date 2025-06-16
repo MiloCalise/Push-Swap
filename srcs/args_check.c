@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:20:45 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:40:08 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:01:13 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	check_str(char **argv)
 		return (0);
 	if (!check_occ_split(strs))
 	{
-		free_split(strs, 0);
+		free_split(strs);
 		ft_putstr_fd("Error\n", 2);
 		exit (0);
 	}
@@ -70,13 +70,13 @@ int	check_str(char **argv)
 		if (!do_checks(strs[i]))
 		{
 			ft_putstr_fd("Error\n", 2);
-			free_split(strs, i);
+			free_split(strs);
 			exit (0);
 		}
-		free(strs[i]);
 		i++;
 	}
-	return (free(strs), 1);
+	free_split(strs);
+	return (1);
 }
 
 int	do_checks(char *str)
@@ -91,12 +91,14 @@ int	do_checks(char *str)
 	return (1);
 }
 
-void	free_split(char **strs, int i)
+void	free_split(char **strs)
 {
+	int	i;
+
+	i = 0;
+	if (!strs)
+		return ;
 	while (strs[i])
-	{
-		free(strs[i]);
-		i++;
-	}
+		free(strs[i++]);
 	free(strs);
 }

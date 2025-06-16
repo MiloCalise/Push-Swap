@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:38:44 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:55:06 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:00:59 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		get_chunk_count(int size);
 
 int		*sortint(int *tab, int size);
 
-void	free_split(char **split, int i);
+void	free_split(char **strs);
 void	ft_lstprint(t_lists *lst);
 void	ft_lstadd_back_ps(t_lists **lst, t_lists *new);
 void	ft_lstadd_front_ps(t_lists **lst, t_lists *new);

@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:47:23 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:45:54 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:00:15 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ t_lists	*split_to_list(char **argv)
 	while (strs[i])
 	{
 		ft_lstadd_back_ps(&lst_a, ft_lstnew_ps(ft_atoi(strs[i])));
-		free(strs[i]);
 		i++;
 	}
+	free_split(strs);
 	return (lst_a);
 }
 
