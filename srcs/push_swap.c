@@ -6,11 +6,11 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:12:35 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/12 11:02:04 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 11:07:39 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap."
 
 int	check_error(int argc, char **argv)
 {
