@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 14:14:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:42:58 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 10:22:15 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ void	free_list(t_lists **lst)
 {
 	t_lists	*tmp;
 
+	if (!lst || !*lst)
+		return ;
 	while (*lst)
 	{
 		tmp = (*lst)->next;
 		free(*lst);
 		*lst = tmp;
 	}
+	*lst = NULL;
 }
 
 int	ft_lstsize_ps(t_lists *lst)

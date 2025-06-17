@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:47:23 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/12 11:00:15 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 10:28:31 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ t_lists	*split_to_list(char **argv)
 	t_lists	*lst_a;
 
 	strs = ft_split(argv[1], ' ');
-	if (!strs)
+	if (!strs || !*strs)
+	{
+		free_split(strs);
 		exit (1);
+	}
 	i = 1;
 	lst_a = ft_lstnew_ps(ft_atoi(strs[0]));
 	while (strs[i])
