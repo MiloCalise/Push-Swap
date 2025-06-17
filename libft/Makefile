@@ -6,7 +6,7 @@
 #    By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 16:57:49 by miltavar          #+#    #+#              #
-#    Updated: 2025/05/23 12:12:49 by miltavar         ###   ########.fr        #
+#    Updated: 2025/06/17 15:24:31 by miltavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c get_next_line.c \
-		get_next_line_utils.c
+		get_next_line_utils.c ft_printf_types_utils.c ft_printf_types.c ft_printf_types.c \
+		ft_printf_utils.c
 
 HEADERS	= libft.h
 OBJS	= ${SRCS:.c=.o}

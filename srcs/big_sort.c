@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:50:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/16 11:07:07 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 16:31:20 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,13 @@ int	find_pos_in_range(t_lists *lst, int min, int max)
 		i++;
 	}
 	return (0);
+}
+
+t_lists	*ft_lstlast_ps(t_lists *lst)
+{
+	while (lst && lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

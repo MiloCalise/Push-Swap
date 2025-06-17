@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 10:34:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:41:27 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 16:32:46 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap(t_lists **lst)
 {
 	int	tmp;
 
-	if (lst && (*lst)->content && (*lst)->next)
+	if (lst && (*lst) && (*lst)->next)
 	{
 		tmp = (*lst)->content;
 		(*lst)->content = (*lst)->next->content;
@@ -34,30 +34,29 @@ void	push(t_lists **dest, t_lists **src)
 {
 	t_lists	*tmp;
 
-	if (!src || !(*src))
+	if (!(*src))
 		return ;
 	tmp = *src;
 	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
+	tmp->next = NULL;
+	if (!*dest)
+		*dest = tmp;
+	else
+		ft_lstadd_front_ps(dest, tmp);
 }
 
 void	rotate(t_lists **lst)
 {
-	int		temp;
 	t_lists	*tmp;
 
-	if (!(*lst)->next)
+	if (!lst || ft_lstsize_ps(*lst) == 1)
 		return ;
-	if ((*lst) && (*lst)->content)
-		temp = (*lst)->content;
-	tmp = (*lst);
-	while (tmp->next)
-	{
-		tmp->content = tmp->next->content;
-		tmp = tmp->next;
-	}
-	tmp->content = temp;
+	tmp = *lst;
+	tmp = ft_lstlast_ps(tmp);
+	tmp->next = ft_lstnew_ps((*lst)->content);
+	tmp = (*lst)->next;
+	free(*lst);
+	*lst = tmp;
 }
 
 void	reverse_rotate(t_lists **lst)

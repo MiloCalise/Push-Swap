@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:12:35 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/12 11:02:04 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 16:12:37 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,18 @@ void	distributor(t_lists **lst_a, t_lists **lst_b)
 	int	size;
 
 	size = ft_lstsize_ps(*lst_a);
+	if (check_order(lst_a))
+	{
+		free_list(lst_a);
+		return ;
+	}
 	if (size == 2)
 		two(lst_a);
 	else if (size == 3)
 		three(lst_a);
 	else if (size == 4)
 		four(lst_a, lst_b);
-	else if (size == 5)
-		five(lst_a, lst_b);
-	else if (size > 5)
+	else if (size > 4)
 	{
 		list_tab(lst_a);
 		sort_chunk(lst_a, lst_b);

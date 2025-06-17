@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:38:44 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/12 11:00:59 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 16:32:05 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int		find_max_pos(t_lists *lst);
 int		exists_in_range(t_lists *lst, int min, int max);
 int		find_pos_in_range(t_lists *lst, int min, int max);
 int		get_chunk_count(int size);
+int		check_order(t_lists **lst_a);
+int		find_pos(t_lists *lst, int value);
 
 int		*sortint(int *tab, int size);
 
@@ -52,7 +54,6 @@ void	free_list(t_lists **lst);
 void	two(t_lists **lst_a);
 void	three(t_lists **lst_a);
 void	four(t_lists **lst_a, t_lists **lst_b);
-void	five(t_lists **lst_a, t_lists **lst_b);
 void	push(t_lists **dest, t_lists **src);
 void	pb(t_lists **lst_a, t_lists **lst_b);
 void	pa(t_lists **lst_a, t_lists **lst_b);
@@ -75,5 +76,6 @@ void	rotate_to_min(t_lists **lst, int pos, int max);
 t_lists	*split_to_list(char **argv);
 t_lists	*ft_lstnew_ps(int content);
 t_lists	*argv_to_list(int argc, char **argv);
+t_lists	*ft_lstlast_ps(t_lists *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 12:15:54 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/11 15:56:32 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 14:55:45 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	two(t_lists **lst_a)
 {
-	if ((*lst_a)->content < (*lst_a)->next->content)
+	if ((*lst_a)->content > (*lst_a)->next->content)
 		sa(lst_a);
 }
 
@@ -88,17 +88,16 @@ int	get_min_pos(t_lists *lst)
 	return (pos);
 }
 
-void	five(t_lists **lst_a, t_lists **lst_b)
+int	check_order(t_lists **lst_a)
 {
-	int	pos;
+	t_lists	*tmp;
 
-	pos = get_min_pos(*lst_a);
-	rotate_to_min(lst_a, pos, 5);
-	pb(lst_a, lst_b);
-	pos = get_min_pos(*lst_a);
-	rotate_to_min(lst_a, pos, 4);
-	pb(lst_a, lst_b);
-	three(lst_a);
-	pa(lst_a, lst_b);
-	pa(lst_a, lst_b);
+	tmp = *lst_a;
+	while (tmp)
+	{
+		if (tmp->content > tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

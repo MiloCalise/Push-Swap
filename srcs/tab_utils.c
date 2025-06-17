@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:16:38 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 10:59:34 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/17 16:38:05 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	list_tab(t_lists **lst_a)
 
 int	get_chunk_count(int size)
 {
-	if (size <= 100)
+	 if (size <= 100)
 		return (5);
 	else if (size <= 200)
 		return (9);
