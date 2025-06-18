@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:12:35 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 16:12:37 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:57:49 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ void	sort_chunk(t_lists **lst_a, t_lists **lst_b)
 	int	max;
 
 	size = ft_lstsize_ps(*lst_a);
+	if (size <= 10)
+	{
+		sort_small(lst_a, lst_b);
+		return ;
+	}
 	chunk_size = size / get_chunk_count(size);
 	min = 0;
 	max = chunk_size;

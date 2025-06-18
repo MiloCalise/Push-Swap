@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:38:44 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 16:32:05 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/18 09:39:18 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	sort_chunk(t_lists **lst_a, t_lists **lst_b);
 void	push_chunk(t_lists **lst_a, t_lists **lst_b, int min, int max);
 void	push_back(t_lists **lst_a, t_lists **lst_b);
 void	rotate_to_min(t_lists **lst, int pos, int max);
+void	sort_small(t_lists **lst_a, t_lists **lst_b);
 
 t_lists	*split_to_list(char **argv);
 t_lists	*ft_lstnew_ps(int content);
