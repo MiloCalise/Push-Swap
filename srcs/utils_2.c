@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 14:14:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 16:06:22 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/18 13:49:23 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	free_list(t_lists **lst)
 
 int	ft_lstsize_ps(t_lists *lst)
 {
-	int	i;
+	int		i;
 	t_lists	*tmp;
 
 	i = 0;
