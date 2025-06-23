@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 11:12:35 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/18 11:57:49 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 15:46:32 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ void	push_chunk(t_lists **lst_a, t_lists **lst_b, int min, int max)
 		pos = find_pos_in_range(*lst_a, min, max);
 		if (pos <= ft_lstsize_ps(*lst_a) / 2)
 			while (pos-- > 0)
-				ra(lst_a);
+				ra(lst_a, lst_b);
 		else
 			while (pos++ < ft_lstsize_ps(*lst_a))
 				rra(lst_a);
 		if ((*lst_a)->content < mid)
 		{
 			pb(lst_a, lst_b);
-			rb(lst_b);
+			rb(lst_b, lst_a);
 		}
 		else
 			pb(lst_a, lst_b);
@@ -94,6 +94,7 @@ void	push_chunk(t_lists **lst_a, t_lists **lst_b, int min, int max)
 void	distributor(t_lists **lst_a, t_lists **lst_b)
 {
 	int	size;
+	int	i;
 
 	size = ft_lstsize_ps(*lst_a);
 	if (check_order(lst_a))
@@ -101,16 +102,19 @@ void	distributor(t_lists **lst_a, t_lists **lst_b)
 		free_list(lst_a);
 		return ;
 	}
-	if (size == 2)
+	if (size == 1)
+		return ;
+	else if (size == 2)
 		two(lst_a);
 	else if (size == 3)
-		three(lst_a);
+		three(lst_a, lst_b);
 	else if (size == 4)
 		four(lst_a, lst_b);
 	else if (size > 4)
 	{
-		list_tab(lst_a);
-		sort_chunk(lst_a, lst_b);
+		i = list_tab(lst_a, 0);
+		if (i >= 0)
+			sort_chunk(lst_a, lst_b);
 	}
 	free_list(lst_a);
 	free_list(lst_b);

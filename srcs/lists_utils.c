@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:47:23 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 10:28:31 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:07:22 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	ft_lstprint(t_lists *lst)
 {
 	while (lst)
 	{
-		printf("%d ", lst->content);
+		ft_printf("%d ", lst->content);
 		lst = lst->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 
 t_lists	*ft_lstnew_ps(int content)

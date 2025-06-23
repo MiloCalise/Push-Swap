@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:20:45 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/12 13:01:13 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:07:00 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@ int	check_not_digit(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == 45 || str[i] == 43)
-		i++;
+	if (str[i] && str[i] < 48 && str[i] > 57 && !str[i + 1])
+		return (0);
+	if (str[i] && (str[i] == 45 || str[i] == 43))
+	{
+		if (str[i + 1] && str[i + 1] >= 48 && str[i + 1] <= 57)
+			i++;
+		else
+			return (0);
+	}
 	while (str[i])
 	{
 		if (str[i] >= 48 && str[i] <= 57)
@@ -85,7 +92,9 @@ int	do_checks(char *str)
 
 	if (!check_not_digit(str))
 		return (0);
-	check = atol(str);
+	check = ft_atol(str);
+	if (ft_strlen(str) > 12)
+		return (0);
 	if (check > 2147483647 || check < -2147483648)
 		return (0);
 	return (1);

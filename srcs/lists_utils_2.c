@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 10:34:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 16:32:46 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 14:04:22 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,23 @@ void	push(t_lists **dest, t_lists **src)
 		ft_lstadd_front_ps(dest, tmp);
 }
 
-void	rotate(t_lists **lst)
+int	rotate(t_lists **lst)
 {
 	t_lists	*tmp;
 
-	if (!lst || ft_lstsize_ps(*lst) == 1)
-		return ;
+	if (!lst)
+		return (0);
+	if (ft_lstsize_ps(*lst) == 1)
+		return (0);
 	tmp = *lst;
 	tmp = ft_lstlast_ps(tmp);
 	tmp->next = ft_lstnew_ps((*lst)->content);
+	if (!tmp->next)
+		return (-1);
 	tmp = (*lst)->next;
 	free(*lst);
 	*lst = tmp;
+	return (0);
 }
 
 void	reverse_rotate(t_lists **lst)

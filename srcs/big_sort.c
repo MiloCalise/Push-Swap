@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:50:39 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 16:31:20 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:36:16 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	push_back(t_lists **lst_a, t_lists **lst_b)
 		pos = find_max_pos(*lst_b);
 		if (pos <= ft_lstsize_ps(*lst_b) / 2)
 			while (pos-- > 0)
-				rb(lst_b);
+				rb(lst_b, lst_a);
 		else
 			while (pos++ < ft_lstsize_ps(*lst_b))
 				rrb(lst_b);

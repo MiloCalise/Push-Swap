@@ -6,7 +6,7 @@
 #    By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 14:15:45 by miltavar          #+#    #+#              #
-#    Updated: 2025/06/11 15:18:58 by miltavar         ###   ########.fr        #
+#    Updated: 2025/06/23 15:44:51 by miltavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,11 @@ $(LIBFT):
 
 clean:
 	@rm -f $(OBJS)
-	@$(MAKE) -C $(LIBFT_PATH) clean
+	$(MAKE) -C $(LIBFT_PATH) clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) -C $(LIBFT_PATH) fclean
+	$(MAKE) -C $(LIBFT_PATH) fclean
 
 re: fclean all
 

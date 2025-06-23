@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 12:15:54 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 14:55:45 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:37:52 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	two(t_lists **lst_a)
 		sa(lst_a);
 }
 
-void	three(t_lists **lst_a)
+void	three(t_lists **lst_a, t_lists **lst_b)
 {
 	int	one;
 	int	two;
@@ -35,11 +35,11 @@ void	three(t_lists **lst_a)
 		rra(lst_a);
 	}
 	else if (one > two && two < three && one > three)
-		ra(lst_a);
+		ra(lst_a, lst_b);
 	else if (one < two && two > three && one < three)
 	{
 		sa(lst_a);
-		ra(lst_a);
+		ra(lst_a, lst_b);
 	}
 	else if (one < two && two > three && one > three)
 		rra(lst_a);
@@ -51,16 +51,16 @@ void	four(t_lists **lst_a, t_lists **lst_b)
 
 	pos = get_min_pos(*lst_a);
 	if (pos == 1)
-		ra(lst_a);
+		ra(lst_a, lst_b);
 	else if (pos == 2)
 	{
-		ra(lst_a);
-		ra(lst_a);
+		ra(lst_a, lst_b);
+		ra(lst_a, lst_b);
 	}
 	else if (pos == 3)
 		rra(lst_a);
 	pb(lst_a, lst_b);
-	three(lst_a);
+	three(lst_a, lst_b);
 	pa(lst_a, lst_b);
 }
 
@@ -93,7 +93,9 @@ int	check_order(t_lists **lst_a)
 	t_lists	*tmp;
 
 	tmp = *lst_a;
-	while (tmp)
+	if (!tmp || !tmp->next)
+		return (1);
+	while (tmp->next)
 	{
 		if (tmp->content > tmp->next->content)
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:38:44 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/18 09:39:18 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:57:46 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		find_pos_in_range(t_lists *lst, int min, int max);
 int		get_chunk_count(int size);
 int		check_order(t_lists **lst_a);
 int		find_pos(t_lists *lst, int value);
+int		list_tab(t_lists **lst_a, int i);
+int		rotate(t_lists **lst);
 
 int		*sortint(int *tab, int size);
 
@@ -48,11 +50,10 @@ void	ft_lstprint(t_lists *lst);
 void	ft_lstadd_back_ps(t_lists **lst, t_lists *new);
 void	ft_lstadd_front_ps(t_lists **lst, t_lists *new);
 void	swap(t_lists **lst);
-void	rotate(t_lists **lst);
 void	reverse_rotate(t_lists **lst);
 void	free_list(t_lists **lst);
 void	two(t_lists **lst_a);
-void	three(t_lists **lst_a);
+void	three(t_lists **lst_a, t_lists **lst_b);
 void	four(t_lists **lst_a, t_lists **lst_b);
 void	push(t_lists **dest, t_lists **src);
 void	pb(t_lists **lst_a, t_lists **lst_b);
@@ -62,16 +63,14 @@ void	rra(t_lists **lst_a);
 void	rrr(t_lists **lst_a, t_lists **lst_b);
 void	ss(t_lists **lst_a, t_lists **lst_b);
 void	rr(t_lists **lst_a, t_lists **lst_b);
-void	ra(t_lists **lst_a);
-void	rb(t_lists **lst_b);
+void	ra(t_lists **lst_a, t_lists **lst_b);
+void	rb(t_lists **lst_b, t_lists **lst_a);
 void	sa(t_lists **lst_a);
 void	sb(t_lists **lst_b);
 void	swapint(int *a, int *b);
-void	list_tab(t_lists **lst_a);
 void	sort_chunk(t_lists **lst_a, t_lists **lst_b);
 void	push_chunk(t_lists **lst_a, t_lists **lst_b, int min, int max);
 void	push_back(t_lists **lst_a, t_lists **lst_b);
-void	rotate_to_min(t_lists **lst, int pos, int max);
 void	sort_small(t_lists **lst_a, t_lists **lst_b);
 
 t_lists	*split_to_list(char **argv);

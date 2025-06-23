@@ -6,7 +6,7 @@
 /*   By: miltavar <miltavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 12:12:47 by miltavar          #+#    #+#             */
-/*   Updated: 2025/06/17 15:55:45 by miltavar         ###   ########.fr       */
+/*   Updated: 2025/06/23 13:29:43 by miltavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,22 @@ void	ss(t_lists **lst_a, t_lists **lst_b)
 
 void	rr(t_lists **lst_a, t_lists **lst_b)
 {
-	rotate(lst_a);
-	rotate(lst_b);
+	int	i;
+
+	i = rotate(lst_a);
+	if (i < 0)
+	{
+		free_list(lst_a);
+		free_list(lst_b);
+		exit (1);
+	}
+	i = rotate(lst_b);
+	if (i < 0)
+	{
+		free_list(lst_a);
+		free_list(lst_b);
+		exit (1);
+	}
 	ft_putstr_fd("rr\n", 1);
 }
 
